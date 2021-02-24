@@ -1,0 +1,32 @@
+server:
+  port: 10030
+spring:
+  application:
+    name: admin-ms-device
+  datasource:
+    druid:
+      url: jdbc:mysql://47.98.100.205:3306/exhibition?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: 123456
+      driverClassName: com.mysql.jdbc.Driver
+      initialSize: 5  #��ʼ������������
+      minIdle: 5  #��С��������
+      maxActive: 20 #�����������
+      maxWait: 10000  #��ȡ�������ȴ�ʱ�䣬����
+      testOnBorrow: false #��������ʱ��������Ƿ���Ч
+      testOnReturn: false #�黹����ʱ��������Ƿ���Ч
+      timeBetweenEvictionRunsMillis: 60000 #���ü����������Ƿ���Ч��ʱ�䣨��λ�Ǻ��룩
+      minEvictableIdleTimeMillis: 300000  #���������ӳص���С����ʱ�䣨���룩
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    #spring.jpa.generate-ddl=
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        type: trace
+        use_sql_comments: true
+        jdbc:
+          batch_size: 50
